@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Challenge Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="challenge-title">Skill Challenge: XXX</h1>
+        </div>
+        <div class="content">
+            <div class="section">
+                <h2>Failures</h2>
+                <div class="tracker">
+                    <span id="failures-count">0</span> / <span id="failures-target">Y</span>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Successes</h2>
+                <div class="tracker">
+                    <span id="successes-count">0</span> / <span id="successes-target">B</span>
+                </div>
+            </div>
+        </div>
+        <div class="admin-controls">
+            <label for="title-input">Challenge Title:</label>
+            <input type="text" id="title-input" value="Skill Challenge: XXX">
+            <br>
+            <label for="failures-target-input">Failures Target:</label>
+            <input type="number" id="failures-target-input" value="Y">
+            <br>
+            <label for="successes-target-input">Successes Target:</label>
+            <input type="number" id="successes-target-input" value="B">
+            <br>
+            <button onclick="increment('failure')">Increment Failure</button>
+            <button onclick="increment('success')">Increment Success</button>
+            <br>
+            <button onclick="confirmReset()">Reset</button>
+            <br>
+            <img src="tracker-image.png" alt="Tracker Image" id="tracker-image">
+        </div>
+    </div>
+
+    <div id="reset-confirmation" class="modal">
+        <div class="modal-content">
+            <p>Are you sure?</p>
+            <button onclick="reset(true)">Yes</button>
+            <button onclick="reset(false)">No</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
